@@ -11,27 +11,27 @@ class ColorChanges extends StatefulWidget {
 
 class _ColorChangesState extends State<ColorChanges> {
   Color bgcolor = Colors.white;
-  void changecolor(){
+  void changecolor() {
     setState(() {
       bgcolor = Random().nextBool()
           ? Colors.black
           : Colors.primaries[Random().nextInt(Colors.primaries.length)];
     });
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Color Changes"),
-        centerTitle: true,
-      ),
+      appBar: AppBar(title: const Text("Color Changes"), centerTitle: true),
       body: Container(
         color: bgcolor,
-        child:  Center(
-            child: ElevatedButton(onPressed: (){
+        child: Center(
+          child: ElevatedButton(
+            onPressed: () {
               changecolor();
-            }, child: Text("Tap"))
-
+            },
+            child: Text("Tap"),
+          ),
         ),
       ),
     );
